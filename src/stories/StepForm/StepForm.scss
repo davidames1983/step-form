@@ -1,0 +1,168 @@
+.StepForm {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu-Regular';
+    .StepForm-sidebar {
+        margin: 20px;
+        padding: 20px;
+        display: block;
+        height: calc(100vh - 80px);
+        width: calc(25vw - 40px);
+        max-width: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 12px;
+        .StepForm-progressWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+        }
+    }
+    .StepForm-contentWrapper {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: space-between;
+        margin: 30px 100px;
+        height: calc(100vh - 90px);
+        width: calc(75vw - 200px);
+        max-width: 900px;
+        .StepForm-content {
+            width: 100%;
+            height: 80%;
+            margin-top: 40px;
+        }
+        .StepForm-navigation {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .StepForm-goBackBtn {
+                font-size: 22px;
+                background-color: none;
+                background: none;
+                border: none;
+                font-family: 'Ubuntu-Regular';
+                color: #9699AB;
+            } 
+            .StepForm-nextBtn {
+                font-size: 22px;
+                padding: 20px;
+                font-family: 'Ubuntu-Regular';
+                background: #02295A;
+                border-radius: 10px;
+                border: none;
+                background-color: #02295A;
+                color: #F0F6FF;
+                &.btnDisabled {
+                    background: rgb(182, 182, 182);
+                }
+            }
+            .StepForm-goBackBtn:hover, .StepForm-nextBtn:hover {
+                cursor: pointer;
+            }   
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .StepForm {
+        display: block;
+        background-color: #F0F6FF;
+        .StepForm-sidebar {
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+            height: auto;
+            min-height: 190px;
+            max-width: none;
+            width: 100vw;
+            img {
+                height: auto;
+                max-height: 300px;
+                border-radius: 0;
+            }
+            .StepForm-progressWrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding-top: 0;
+            }
+        }
+        .StepForm-contentWrapper {
+            padding: 20px;
+            justify-content: flex-start;
+            position: absolute;
+            top: 110px;
+            margin: 0 20px;
+            height: 50vh;
+            width: calc(100vw - 80px);
+            max-width: none;
+            background-color: #fff;
+            border-radius: 12px;
+            -webkit-box-shadow: 3px 6px 16px -4px rgba(153,153,153,0.32);
+            -moz-box-shadow: 3px 6px 16px -4px rgba(153,153,153,0.32);
+            box-shadow: 3px 6px 16px -4px rgba(153,153,153,0.32);
+            .StepForm-content {
+                margin-top: 15px;
+            }
+            .StepForm-navigation {
+                background-color: #fff;
+                position: fixed;
+                bottom: 0px;
+                height: 100px;
+                width: calc(100% - 40px);
+                left: 0px;
+                padding: 0px 20px;
+                .StepForm-goBackBtn {
+                    font-size: 18px;
+                } 
+                .StepForm-nextBtn {
+                    font-size: 18px;
+                    padding: 16px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    } 
+}
+
+
+@media only screen and (max-width: 600px) {
+    .StepForm {
+        display: block;
+        .StepForm-sidebar {
+            padding: 0;
+            margin: 0;
+            border-radius: 0;
+            height: auto;
+            min-height: 190px;
+            width: 100vw;
+            img {
+                height: auto;
+                max-height: 300px;
+                border-radius: 0;
+            }
+            .StepForm-progressWrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                padding-top: 0;
+            }
+        }
+        .StepForm-contentWrapper {
+            position: absolute;
+            top: 107px;
+            margin: 0 20px;
+            width: calc(100vw - 80px);
+            background-color: #fff;
+            border-radius: 12px;
+        }
+    } 
+}

@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+## To Run
+    npm run dev
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
 
-In the project directory, you can run:
+## The challenge
 
-### `npm start`
+Your challenge is to build out this multi-step form and get it looking as close to the design as possible.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Your users should be able to:
 
-### `npm test`
+- Complete each step of the sequence
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Where to find everything
 
-### `npm run build`
+Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
 
-### `npm run eject`
+There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  <!-- Sidebar start -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  Step 1
+  Your info
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  Step 2
+  Select plan
 
-## Learn More
+  Step 3
+  Add-ons
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Step 4
+  Summary
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  <!-- Sidebar end -->
 
-### Code Splitting
+  <!-- Step 1 start -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  Personal info
+  Please provide your name, email address, and phone number.
 
-### Analyzing the Bundle Size
+  Name
+  e.g. Stephen King
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  Email Address
+  e.g. stephenking@lorem.com
 
-### Making a Progressive Web App
+  Phone Number
+  e.g. +1 234 567 890
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  Next Step
 
-### Advanced Configuration
+  <!-- Step 1 end -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  <!-- Step 2 start -->
 
-### Deployment
+  Select your plan
+  You have the option of monthly or yearly billing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  Arcade
+  $9/mo
 
-### `npm run build` fails to minify
+  Advanced
+  $12/mo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Pro
+  $15/mo
+
+  Monthly
+  Yearly
+
+  Go Back
+  Next Step
+
+  <!-- Step 2 end -->
+
+  <!-- Step 3 start -->
+
+  Pick add-ons
+  Add-ons help enhance your gaming experience.
+
+  Online service
+  Access to multiplayer games
+  +$1/mo
+
+  Larger storage
+  Extra 1TB of cloud save
+  +$2/mo
+
+  Customizable Profile
+  Custom theme on your profile
+  +$2/mo
+
+  Go Back
+  Next Step
+
+  <!-- Step 3 end -->
+
+  <!-- Step 4 start -->
+
+  Finishing up
+  Double-check everything looks OK before confirming.
+
+  <!-- Dynamically add subscription and add-on selections here -->
+
+  Total (per month/year)
+
+  Go Back
+  Confirm
+
+  <!-- Step 4 end -->
+
+  <!-- Step 5 start -->
+
+  Thank you!
+
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com.
+
+  <!-- Step 5 end -->

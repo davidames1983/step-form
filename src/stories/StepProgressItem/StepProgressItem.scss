@@ -1,0 +1,77 @@
+.StepProgressItem {
+    display: flex;
+    padding: 10px;
+    width: 85%;
+    margin-top: 23px;
+    .StepProgressItem-number {
+        font-family: 'Ubuntu-Medium';
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        background-color: transparent;
+        border-radius: 50%;
+        color: #FAFBFF;
+        border: 1px solid #F0F6FF;
+        &--active {
+           background-color: #BFE2FD;
+           color: #02295A;
+        }
+    }
+    .StepProgressItem-text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 22px;
+        margin-left: 20px;
+        .StepProgressItem-stepNumber {
+            color: #ADBEFF;
+            font-family: 'Ubuntu-Regular';
+        }
+        .StepProgressItem-stepLabel {
+            color: #FAFBFF;
+            font-family: 'Ubuntu-Medium';
+        }
+    }
+}
+
+@media only screen and (max-width: 1220px) {
+    .StepProgressItem {
+        .StepProgressItem-number {
+            font-size: 17px;
+            width: 38px;
+            height: 38px;
+        }
+        .StepProgressItem-text {
+            font-size: 17px;
+            margin-left: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .StepProgressItem {
+        align-items: center;
+        justify-content: center;
+        margin: 33px 20px 0 20px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .StepProgressItem {
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0px 0px 0px;
+        .StepProgressItem-number {
+            font-size: 15px;
+            width: 32px;
+            height: 32px;
+        }
+        .StepProgressItem-text {
+            font-size: 15px;
+        }
+    }
+}

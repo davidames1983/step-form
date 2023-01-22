@@ -1,0 +1,83 @@
+.PersonalInfo {
+    margin-top: 17px;
+    .PersonalInfo-labelErrorWrapper {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        .PersonalInfo-label {
+           color: #02295A;
+           font-size: 22px;
+           font-family: 'Ubuntu-Regular';
+           margin: 40px 0 12px 0;
+        }
+        .PersonalInfo-error {
+            color: #ED3548;
+            font-size: 22px;
+            font-family: 'Ubuntu-Bold';
+        }
+    }
+    .PersonalInfo-textInput {
+        border-radius: 10px;
+        border: 1px solid #c1c3cb;
+        height: 67px;
+        font-family: 'Ubuntu-Medium';
+        width: calc(100% - 60px);
+        color: #02295A;
+        font-size: 23px;
+        padding: 0 30px;
+        &.inputActive {
+            border-color: #473DFF;
+        }
+        &.inputHasErrors {
+            border-color: #ED3548;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1050px) {
+    .PersonalInfo {
+        margin-top: 25px;
+        .PersonalInfo-labelErrorWrapper {
+            .PersonalInfo-label {
+                font-size: 14px;
+                margin: 12px 0 3px 0;
+            }
+            .PersonalInfo-error {
+                font-size: 14px;
+            }
+        }
+        .PersonalInfo-textInput {
+            border-radius: 5px;
+            height: 42px;
+            font-size: 16px;
+            padding: 0 30px;
+        }
+    }  
+}
+
+
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #fff;
+}
+  
+input:focus {
+    outline: none;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #9699AB;
+    opacity: 1; /* Firefox */
+}
+  
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #9699AB;
+}
+  
+input::-ms-input-placeholder { /* Microsoft Edge */
+    color: #9699AB;
+}

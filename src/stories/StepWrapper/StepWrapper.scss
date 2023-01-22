@@ -1,0 +1,39 @@
+.StepWrapper {
+    width: 100%;
+    height: auto;
+    .StepWrapper-title {
+        font-family: 'Ubuntu-Bold';
+        font-size: 45px;
+        word-wrap: break-word;
+        color: #02295A;
+        margin-bottom: 15px;
+    }
+    .StepWrapper-text {
+        font-size: 23px;
+        color: #9699AB;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .StepWrapper {
+        .StepWrapper-title {
+            font-size: 28px;
+        }
+        .StepWrapper-text {
+            font-size: 22px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .StepWrapper {
+        .StepWrapper-title {
+            font-size: 23px;
+        }
+        .StepWrapper-text {
+            font-size: 16px;
+        }
+    }  
+}
+
