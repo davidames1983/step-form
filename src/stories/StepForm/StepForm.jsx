@@ -5,7 +5,7 @@ import BGMobile from '../assets/bg-sidebar-mobile.svg';
 import StepProgressItem from '../StepProgressItem/StepProgressItem.jsx';
 import StepWrapper from '../StepWrapper/StepWrapper.jsx';
 import { STEPS, INITIAL_STEPS_STATE, INITIAL_STEPS_ERROR_STATE } from '../steps.config';
-import validateStepStateString from '../validate';
+import validateInfoForm from '../validate';
 
 const StepForm = () => {
     const [width, setWidth] = useState(window.innerWidth);
@@ -16,23 +16,18 @@ const StepForm = () => {
     const isMobile = width <= 1050;
 
     const getNextBtnDisabled = () => {
-        switch(currentStep) {
-            case 1:
-                const { name, email, phone } = stepsErrorState;
-                const { name: n, email: e, phone: p } = stepsState;
-                const hasLen = (str) => str.length > 0;
-                return (name || email || phone) || (!hasLen(n) || !hasLen(e) || !hasLen(p))
-            case 2:
-                return
-            case 3:
-                return
-            case 4:
-                return
+        if (currentStep === 1) {
+            const { name, email, phone } = stepsErrorState;
+            const { name: n, email: e, phone: p } = stepsState;
+            const hasLen = (str) => str.length > 0;
+            return (name || email || phone) || (!hasLen(n) || !hasLen(e) || !hasLen(p))
+        } else {
+            return false;
         }
     }
 
     const handleStateChange = (key, value) => {
-        const newErrorState = validateStepStateString(key, value, stepsErrorState);
+        const newErrorState = validateInfoForm(key, value, stepsErrorState);
         setStepsErrorState(newErrorState);
         setStepsState(prevState => ({
             ...prevState,
@@ -41,7 +36,9 @@ const StepForm = () => {
     }
 
     useEffect(() => {
-        const nextBtnState = getNextBtnDisabled();
+        // TODO uncomment
+        // const nextBtnState = getNextBtnDisabled();
+        const nextBtnState = false;
         setNextBtnDisabled(nextBtnState);
     },[stepsState])
 

@@ -1,5 +1,5 @@
 ## To Run
-    npm run dev
+    npm start
 
 
 ![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)

@@ -1,9 +1,6 @@
 import React from 'react';
 import PersonalInfo from './Steps/PersonalInfo/PersonalInfo.jsx';
-
-const StepTwoContent = () => (
-    <div>Step Two Content</div>
-)
+import SelectPlan from './Steps/SelectPlan/SelectPlan.jsx';
 
 const StepThreeContent = () => (
     <div>Step Three Content</div>
@@ -28,7 +25,7 @@ const STEPS = [
     {
         title: "Select your plan",
         subText: "You have the option of monthly or yearly billing.",
-        component: StepTwoContent,
+        component: SelectPlan,
         label: "SELECT PLAN"
     },
     {
@@ -61,6 +58,8 @@ const INITIAL_STEPS_STATE = {
     name: "",
     email: "",
     phone: "",
+    paySchedule: "monthly",
+    selectedPlan: "arcade"
 }
 
 export {

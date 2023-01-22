@@ -8,7 +8,7 @@ const isNameValid = (phone) => {
 const isPhoneValid = (phone) => {
     return String(phone)
         .match(
-        /^(\d{1}\+) ?\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+        /^(\d{1}\+)? ?\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
         );
 };
 
@@ -23,10 +23,12 @@ const isEmailValid = (email) => {
 const validators = {
     name: isNameValid, 
     phone: isPhoneValid, 
-    email: isEmailValid
+    email: isEmailValid,
+    paySchedule: () => true,
+    selectedPlan: () => true,
 }
 
-const validateStringValue = (key, value) => {
+const validate = (key, value) => {
     return validators[key](value);
 }
 
@@ -38,13 +40,13 @@ const capitalize = (str) => {
     return firstLetterCap + remainingLetters
 }
 
-const validateStepStateString = (key, value, errorState) => {
+const validateInfoForm = (key, value, errorState) => {
     const errorStateCopy = JSON.parse(JSON.stringify(errorState));
     if (value.length === 0) {
         errorStateCopy[key] = `${capitalize(key)} cannot be blank.`;
         return errorStateCopy;
     }
-    const isValid = validateStringValue(key, value);
+    const isValid = validate(key, value);
     if (!isValid) {
         errorStateCopy[key] = `${capitalize(key)} is invalid.`;
     } else {
@@ -53,5 +55,5 @@ const validateStepStateString = (key, value, errorState) => {
     return errorStateCopy;
 }
 
-export default validateStepStateString;
+export default validateInfoForm;
 
