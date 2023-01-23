@@ -1,3 +1,5 @@
+import capitalize from './helpers';
+
 const isNameValid = (phone) => {
     return String(phone)
         .match(
@@ -26,18 +28,13 @@ const validators = {
     email: isEmailValid,
     paySchedule: () => true,
     selectedPlan: () => true,
+    serviceAddOn: () => true,
+    storageAddOn: () => true,
+    profileAddOn: () => true,
 }
 
 const validate = (key, value) => {
     return validators[key](value);
-}
-
-const capitalize = (str) => {    
-    const firstLetter = str.charAt(0)
-    const firstLetterCap = firstLetter.toUpperCase()
-    const remainingLetters = str.slice(1)
-    
-    return firstLetterCap + remainingLetters
 }
 
 const validateInfoForm = (key, value, errorState) => {

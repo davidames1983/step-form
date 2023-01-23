@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Arcade from '../../assets/icon-arcade.svg';
 import Advanced from '../../assets/icon-advanced.svg';
 import Pro from '../../assets/icon-pro.svg';
+import { PRICING } from '../../steps.config';
 import './SelectPlan.scss';
 
 const SelectPlan = ({ handleStateChange, stepsState }) => {
     const { paySchedule, selectedPlan } = stepsState;
-    const [ activeElement, setActiveElement ] = useState(null);
+
+    const isYrly = paySchedule === 'yearly';
 
     const handleSwitchClick = () => {
         const newVal = paySchedule === 'yearly' ? 'monthly' : 'yearly';
         handleStateChange('paySchedule', newVal);
     }
+
+    const { scheduleAbbr } = PRICING["schedules"][paySchedule];
+    const arcadePrice = PRICING['arcade'][paySchedule];
+    const advancedPrice = PRICING['advanced'][paySchedule];
+    const proPrice = PRICING['pro'][paySchedule];
 
     return (
         <div className='SelectPlan'>
@@ -24,17 +31,10 @@ const SelectPlan = ({ handleStateChange, stepsState }) => {
                         <img src={Arcade} />
                     </div>
                     <div>Arcade</div>
-                    {paySchedule === 'monthly' && 
-                        <div>
-                            <div>$9/mo</div>
-                        </div>
-                    }
-                    {paySchedule === 'yearly' && 
-                        <div>
-                            <div>$90/yr</div>
-                            <div>2 months free</div>
-                        </div>
-                    }                
+                    <div>
+                        <div>${arcadePrice}/{scheduleAbbr}</div>
+                        {isYrly && <div>2 monthss free</div>}             
+                    </div>  
                 </div>
                 <div 
                     onClick={() => handleStateChange('selectedPlan','advanced')}
@@ -44,17 +44,10 @@ const SelectPlan = ({ handleStateChange, stepsState }) => {
                         <img src={Advanced} />
                     </div>
                     <div>Advanced</div>
-                    {paySchedule === 'monthly' && 
-                        <div>
-                            <div>$12/mo</div>
-                        </div>
-                    }
-                    {paySchedule === 'yearly' && 
-                        <div>
-                            <div>$120/yr</div>
-                            <div>2 months free</div>
-                        </div>
-                    }
+                    <div>
+                        <div>${advancedPrice}/{scheduleAbbr}</div>
+                        {isYrly && <div>2 months free</div>}  
+                    </div>
                 </div>
                 <div 
                     onClick={() => handleStateChange('selectedPlan','pro')}
@@ -64,25 +57,18 @@ const SelectPlan = ({ handleStateChange, stepsState }) => {
                         <img src={Pro} />
                     </div>
                     <div>Pro</div>
-                    {paySchedule === 'monthly' && 
-                        <div>
-                            <div>$15/mo</div>
-                        </div>
-                    }
-                    {paySchedule === 'yearly' && 
-                        <div>
-                            <div>$150/yr</div>
-                            <div>2 months free</div>
-                        </div>
-                    }
+                    <div>
+                        <div>${proPrice}/{scheduleAbbr}</div>
+                        {isYrly && <div>2 months free</div>}  
+                    </div>
                 </div>
             </div>
             <div className='SelectPlan-payScheduleOptions'>
                 <div className='' onClick={() => handleStateChange('paySchedule','monthly')}>Monthly</div>
                 <div>
-                    <label class="switch">
+                    <label className="switch">
                         <input onChange={() => null} checked={paySchedule === 'yearly'} type="checkbox" />
-                        <span onClick={handleSwitchClick} class="slider round"></span>
+                        <span onClick={handleSwitchClick} className="slider round"></span>
                     </label>
                 </div>
                 <div className='' onClick={() => handleStateChange('paySchedule','yearly')}>Yearly</div>
