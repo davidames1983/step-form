@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './PersonalInfo.scss';
 
 const PersonalInfo = ({ handleStateChange, stepsState, stepsErrorState }) => {
-    const { name, email, phone } = stepsState;
-    const { name: nameError, email: emailError, phone: phoneError } = stepsErrorState;
     const [ activeElement, setActiveElement ] = useState(null);
 
     const onFocus = (key) => {
@@ -13,53 +11,45 @@ const PersonalInfo = ({ handleStateChange, stepsState, stepsErrorState }) => {
         setActiveElement(null);
     }
 
+    const PERSONAL_INFO = [
+        {
+            label: 'Name',
+            id: 'name',
+            placeholder: 'e.g. Stephen King'
+        },
+        {
+            label: 'Email Address',
+            id: 'email',
+            placeholder: 'e.g. stephenking@lorem.com'
+        },
+        {
+            label: 'Phone Number',
+            id: 'phone',
+            placeholder: 'e.g. 1+ 234 567 8900'
+        }
+    ]
+
     return (
         <div className='PersonalInfo'>
-            <div className='PersonalInfo-name'>
-                <div className='PersonalInfo-labelErrorWrapper'>
-                    <div className='PersonalInfo-label'>Name</div>
-                    <div className='PersonalInfo-error'>{activeElement === 'name' ? null : nameError}</div>
-                </div>
-                <input 
-                    className={`PersonalInfo-textInput ${activeElement === 'name' ? 'inputActive' : (nameError ? 'inputHasErrors' : '') }`}
-                    placeholder='e.g. Stephen King' 
-                    onChange={(e) => handleStateChange("name", e.target.value)} 
-                    value={name} 
-                    type="text" 
-                    onFocus={() => onFocus('name')}
-                    onBlur={onBlur}
-                />
-            </div>
-            <div className='PersonalInfo-email'>
-                <div className='PersonalInfo-labelErrorWrapper'>
-                    <div className='PersonalInfo-label'>Email Address</div>
-                    <div className='PersonalInfo-error'>{activeElement === 'email' ? null : emailError}</div>
-                </div>
-                <input 
-                    className={`PersonalInfo-textInput ${activeElement === 'email' ? 'inputActive' : (emailError ? 'inputHasErrors' : '') }`}
-                    placeholder='e.g. stephenking@lorem.com'
-                    onChange={(e) => handleStateChange("email", e.target.value)} 
-                    value={email} 
-                    type="text" 
-                    onFocus={() => onFocus('email')}
-                    onBlur={onBlur}
-                />
-            </div>
-            <div className='PersonalInfo-phone'>
-                <div className='PersonalInfo-labelErrorWrapper'>
-                    <div className='PersonalInfo-label'>Phone Number</div>
-                    <div className='PersonalInfo-error'>{activeElement === 'phone' ? null : phoneError}</div>
-                </div>
-                <input 
-                    className={`PersonalInfo-textInput ${activeElement === 'phone' ? 'inputActive' : (phoneError ? 'inputHasErrors' : '') }`}
-                    placeholder='e.g. 1+ 234 567 8900'
-                    onChange={(e) => handleStateChange("phone", e.target.value)} 
-                    value={phone} 
-                    type="text" 
-                    onFocus={() => onFocus('phone')}
-                    onBlur={onBlur}
-                />
-            </div>
+            {
+                PERSONAL_INFO.map(info => (
+                    <div className='PersonalInfo-name'>
+                        <div className='PersonalInfo-labelErrorWrapper'>
+                            <div className='PersonalInfo-label'>{info.label}</div>
+                            <div className='PersonalInfo-error'>{activeElement === info.id ? null : stepsErrorState[info.id]}</div>
+                        </div>
+                        <input 
+                            className={`PersonalInfo-textInput ${activeElement === info.id ? 'inputActive' : (stepsErrorState[info.id] ? 'inputHasErrors' : '') }`}
+                            placeholder={info.placeholder} 
+                            onChange={(e) => handleStateChange(info.id, e.target.value)} 
+                            value={stepsState[info.id]} 
+                            type="text" 
+                            onFocus={() => onFocus(info.id)}
+                            onBlur={onBlur}
+                        />
+                    </div>
+                ))
+            }
         </div>
     );
 };

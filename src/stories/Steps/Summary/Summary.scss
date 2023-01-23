@@ -1,3 +1,73 @@
 .Summary {
     margin-top: 10px;
+    .Summary-details {
+        height: auto;
+        width: calc(100% - 60px);
+        padding: 30px;
+        border-radius: 12px;
+        background-color: #FAFBFF;
+        .Summary-planTotal {
+            display: flex;
+            justify-content: space-between;
+            .Summary-selectedPlan {
+                display: flex;
+                flex-direction: column;
+                .Summary-selectedPlanText {
+                    color: #02295A;
+                    font-family: 'Ubuntu-Bold';
+                    font-size: 21px;
+                }
+                .Summary-selectedPlanChange {
+                    color: #9699AB;
+                    font-size: 19px;
+                    text-decoration: underline;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .Summary-planTotalAmount {
+                color: #02295A;
+                font-size: 21px;
+                font-family: 'Ubuntu-Bold';
+            }
+        }
+        .Summary-addOns {
+            border-top: 1px solid #D6D9E6;
+            margin-top: 30px;
+            padding-top: 25px;
+            .Summary-addOn {
+                display: flex;
+                justify-content: space-between;
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+                .Summary-addOnLabel {
+                    color: #9699AB;
+                    font-size: 20px;
+                    font-family: 'Ubuntu-Medium';
+                }
+                .Summary-addOnPrice {
+                    color: #02295A;
+                    font-family: 'Ubuntu-Medium';
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .Summary-total {
+        width: calc(100% - 60px);
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        .Summary-totalLabel {
+            color: #9699AB;
+            font-size: 19px;
+        }
+        .Summary-totalAmount {
+            color: #473DFF;
+            font-family: 'Ubuntu-Bold';
+            font-size: 27px;
+        }
+    }
 }

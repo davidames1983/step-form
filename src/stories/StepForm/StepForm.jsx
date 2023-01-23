@@ -80,26 +80,28 @@ const StepForm = () => {
                                     handleStateChange={handleStateChange}
                                     stepsErrorState={stepsErrorState}
                                     stepsState={stepsState}
+                                    setCurrentStep={setCurrentStep}
                                 />
                             </StepWrapper> : null
                     })}
-                    {currentStep === 5 && <StepWrapper>Final Page</StepWrapper>}
                 </div>
-                <div className='StepForm-navigation'>
-                    {currentStep > 1 ? 
-                        (<button 
-                            onClick={() => setCurrentStep(currentStep - 1)}
-                            className='StepForm-goBackBtn'
-                        >Go Back</button>) : (<div/>)
-                    }
-                    {currentStep < 5 && 
-                        <button 
-                            disabled={nextBtnDisabled}
-                            onClick={() => setCurrentStep(currentStep + 1)}
-                            className={`StepForm-nextBtn ${nextBtnDisabled ? 'btnDisabled' : ''}`}
-                        >Next Step</button>
-                    }
-                </div>
+                {currentStep !== 5 &&
+                    <div className='StepForm-navigation'>
+                        {currentStep > 1 ? 
+                            (<button 
+                                onClick={() => setCurrentStep(currentStep - 1)}
+                                className='StepForm-goBackBtn'
+                            >Go Back</button>) : (<div/>)
+                        }
+                        {currentStep < 5 && 
+                            <button 
+                                disabled={nextBtnDisabled}
+                                onClick={() => setCurrentStep(currentStep + 1)}
+                                className={`StepForm-nextBtn ${nextBtnDisabled ? 'btnDisabled' : ''}`}
+                            >{currentStep === 4 ? 'Confirm' : 'Next Step'}</button>
+                        }
+                    </div>
+                }
             </div>
         </div>
     );

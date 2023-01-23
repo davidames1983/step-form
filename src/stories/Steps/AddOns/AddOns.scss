@@ -1,3 +1,73 @@
 .AddOns {
     margin-top: 10px;
+    font-family: 'Ubuntu-Regular';
+    margin-top: 45px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .AddOns-option {
+        height: 100px;
+        width: calc(100% - 64px);
+        border-radius: 10px;
+        border: 2px solid #D6D9E6;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        &.optionSelected {
+            border-color: #584c9c;
+            background-color: #FAFBFF;
+        }
+        &:hover {
+            cursor: pointer;
+            border-color: #584c9c;
+        }
+        .AddOns-leftSide {
+            display: flex;
+            align-items: center;   
+            .AddOns-checkbox {
+                width: 25px;
+                height: 25px;
+                background-color: #fff;
+                border: 2px solid #D6D9E6;
+                border-radius: 5px;
+            } 
+            .AddOns-checkboxChecked {
+                background-color: #473DFF;
+                border: 2px solid #473DFF;
+                width: 25px;
+                height: 25px;
+                position: relative;
+                border-radius: 5px;
+                img {
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+            .AddOns-text {
+                margin-left: 25px;
+                .AddOns-label {
+                    font-family: 'Ubuntu-Bold';
+                    color: #02295A;
+                    font-size: 22px;
+                }
+                .AddOns-description {
+                    margin-top: 4px;
+                    color: #9699AB;
+                    font-size: 21px;
+                    font-family: 'Ubuntu-Medium';
+                }
+            }
+        }
+        .AddOns-amount {
+            font-family: 'Ubuntu-Medium';
+            color: #584c9c;
+            font-size: 20px;
+        }
+    }
 }

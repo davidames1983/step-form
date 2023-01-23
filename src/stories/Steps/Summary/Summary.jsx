@@ -3,7 +3,7 @@ import capitalize from '../../helpers';
 import { PRICING } from '../../steps.config';
 import './Summary.scss';
 
-const Summary = ({ stepsState }) => {
+const Summary = ({ stepsState, setCurrentStep }) => {
     const { 
         paySchedule, 
         selectedPlan, 
@@ -16,11 +16,10 @@ const Summary = ({ stepsState }) => {
     const { scheduleAbbr, schedule, scheduleShort } = PRICING["schedules"][paySchedule];
     const price = PRICING[selectedPlan][paySchedule];
 
+    const addOnsList = ['serviceAddOn', 'storageAddOn', 'profileAddOn'];
     const getAddOnsTotal = () => {
-        const addOnsList = ['serviceAddOn', 'storageAddOn', 'profileAddOn'];
         const newAddOnsTotal = [serviceAddOn, storageAddOn, profileAddOn]
             .reduce((a,cv,i) => {
-                console.log("a - initial:", a);
                 const option = addOnsList[i];
                 const addOnPrice = PRICING[option][paySchedule];
                 if (cv) { a += addOnPrice }
@@ -31,26 +30,43 @@ const Summary = ({ stepsState }) => {
 
     useEffect(() => {
         const newAddOnsTotal = getAddOnsTotal();
-        console.log("newAddOnsTotal:", newAddOnsTotal);
         setAddOnsTotal(newAddOnsTotal);
     },[])
+
+    const hasAddOns = serviceAddOn || storageAddOn || profileAddOn;
+    const addOns = addOnsList.filter(addOn => stepsState[addOn]);
 
     return (
         <div className='Summary'>
             <div className='Summary-details'>
                 <div className='Summary-planTotal'>
                     <div className='Summary-selectedPlan'>
-                        <div>{capitalize(selectedPlan)} ({schedule})</div>
-                        <div>Change</div>
+                        <div className='Summary-selectedPlanText'>{capitalize(selectedPlan)} ({schedule})</div>
+                        <div 
+                            className='Summary-selectedPlanChange'
+                            onClick={() => setCurrentStep(2)}
+                        >Change</div>
                     </div>
                     <div className='Summary-planTotalAmount'>
                         ${price}/{scheduleAbbr}
                     </div>
                 </div>
+                {hasAddOns &&
+                    <div className='Summary-addOns'>
+                        {
+                            addOns.map(addOn => (
+                                <div className='Summary-addOn'>
+                                    <div className='Summary-addOnLabel'>{PRICING[addOn]['label']}</div>
+                                    <div className='Summary-addOnPrice'>+${PRICING[addOn][paySchedule]}/{scheduleAbbr}</div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                }   
             </div>
             <div className='Summary-total'>
                 <div className='Summary-totalLabel'>Total (per {scheduleShort})</div>
-                <div className='Summary-totalAmount'>${addOnsTotal}/{scheduleAbbr}</div>
+                <div className='Summary-totalAmount'>+${addOnsTotal + price}/{scheduleAbbr}</div>
             </div>
         </div>
     );

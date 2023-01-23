@@ -1,9 +1,11 @@
-import React from 'react';
 import PersonalInfo from './Steps/PersonalInfo/PersonalInfo.jsx';
 import SelectPlan from './Steps/SelectPlan/SelectPlan.jsx';
 import AddOns from './Steps/AddOns/AddOns.jsx';
 import Summary from './Steps/Summary/Summary.jsx';
 import FinalPage from './Steps/FinalPage/FinalPage.jsx';
+import Arcade from './assets/icon-arcade.svg';
+import Advanced from './assets/icon-advanced.svg';
+import Pro from './assets/icon-pro.svg';
 
 const STEPS = [
     {
@@ -74,22 +76,60 @@ const PRICING = {
     },
     serviceAddOn: { 
         monthly: 1,
-        yearly: 10
+        yearly: 10,
+        label: "Online service"
     },
     storageAddOn: { 
         monthly: 2,
-        yearly: 20
+        yearly: 20,
+        label: "Larger storage"
     },
     profileAddOn: { 
         monthly: 2,
-        yearly: 20
+        yearly: 20,
+        label: "Customizable profile"
     },
 }
+
+const PLANS = [
+    {
+        name: 'arcade',
+        image: Arcade,
+    },
+    {
+        name: 'advanced',
+        image: Advanced,
+    },
+    {
+        name: 'pro',
+        image: Pro,
+    }
+]
+
+const ADD_ONS = [
+    { 
+        name: 'serviceAddOn', 
+        label: 'Online service',
+        description: 'Access to multiplayer games'
+    },
+    { 
+        name: 'storageAddOn', 
+        label: 'Larger storage',
+        description: 'Extra 1TB of cloud save'
+    },
+    { 
+        name: 'profileAddOn', 
+        label: 'Customizable profile',
+        description: 'Custom theme on your profile'
+    }
+]
 
 export {
     STEPS,
     INITIAL_STEPS_STATE,
     INITIAL_STEPS_ERROR_STATE,
-    PRICING
+    PRICING,
+    ADD_ONS,
+    PLANS
 };
 

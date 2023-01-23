@@ -6,24 +6,24 @@
         justify-content: space-between;
         .PersonalInfo-label {
            color: #02295A;
-           font-size: 22px;
+           font-size: 19px;
            font-family: 'Ubuntu-Regular';
            margin: 40px 0 12px 0;
         }
         .PersonalInfo-error {
             color: #ED3548;
-            font-size: 22px;
+            font-size: 19px;
             font-family: 'Ubuntu-Bold';
         }
     }
     .PersonalInfo-textInput {
         border-radius: 10px;
         border: 1px solid #c1c3cb;
-        height: 67px;
+        height: 63px;
         font-family: 'Ubuntu-Medium';
         width: calc(100% - 60px);
         color: #02295A;
-        font-size: 23px;
+        font-size: 19px;
         padding: 0 30px;
         &.inputActive {
             border-color: #473DFF;

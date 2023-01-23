@@ -7,12 +7,44 @@
         display: flex;
         justify-content: space-between;
         .SelectPlan-option {
-            height: 200px;
+            height: 230px;
             width: 30%;
             border-radius: 10px;
-            border: 1px solid gray;
+            border: 2px solid #D6D9E6;
             &.selectedPlan {
-                border-color: blue;
+                border-color: #584c9c;
+                background-color: #FAFBFF;
+            }
+            .SelectPlan-image {
+                margin: 25px 20px;
+                height: 85px;
+                img {
+                    width: 50px;
+                }
+            }
+            .SelectPlan-planName {
+                color: #02295A;
+                font-size: 20px;
+                font-family: 'Ubuntu-Medium';
+                margin-left: 20px;
+                margin-bottom: 5px;
+            }
+            .SelectPlan-pricingWrapper {
+                margin-left: 20px;
+                .SelectPlan-pricing {
+                    color: #9699AB;
+                    font-size: 18px;
+                    font-family: 'Ubuntu-Medium';
+                    margin-bottom: 5px;
+                }
+                .SelectPlan-freeText {
+                    color: #02295A;
+                    font-size: 16px;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                border-color: #584c9c;
             }
         }
     }
@@ -20,8 +52,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 50px;
+        background-color: #FAFBFF;
+        border-radius: 7px;
+        padding: 17px 0;
         .switch {
             margin: 0 30px;
+        }
+        .SelectPlan-scheduleOption {
+            font-size: 18px;
+            font-family: 'Ubuntu-Medium';
+            color: #9699AB;
+            &.selected {
+                color: #02295A;
+            }
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
@@ -58,15 +105,16 @@
     background-color: #02295A;
     -webkit-transition: .4s;
     transition: .4s;
+    height: 30px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
+    height: 20px;
+    width: 20px;
+    left: 7px;
+    bottom: 5px;
     background-color: #fff;
     -webkit-transition: .4s;
     transition: .4s;

@@ -1,3 +1,26 @@
 .FinalPage {
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 55vh;
+    .FinalPage-image {
+        margin-bottom: 30px;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .FinalPage-header {
+        color: #02295A;
+        font-family: 'Ubuntu-Bold';
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .FinalPage-text {
+        text-align: center;
+        font-size: 21px;
+        line-height: 33px;
+        color: #9699AB;
+    }
 }
