@@ -4,7 +4,6 @@
 ## To Run Storybook component catalog
     npm run storybook
 
-
 ![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
 
 ## The challenge
@@ -134,3 +133,4 @@ There is also a `style-guide.md` file containing the information you'll need, su
   to email us at support@loremgaming.com.
 
   <!-- Step 5 end -->
+There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
