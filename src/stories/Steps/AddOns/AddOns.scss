@@ -1,5 +1,4 @@
 .AddOns {
-    margin-top: 10px;
     font-family: 'Ubuntu-Regular';
     margin-top: 45px;
     margin-bottom: 35px;
@@ -68,6 +67,49 @@
             font-family: 'Ubuntu-Medium';
             color: #584c9c;
             font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .AddOns {
+        margin-top: 25px;
+        margin-bottom: 0px;
+        .AddOns-option {
+            height: 70px;
+            width: calc(100% - 30px);
+            margin-bottom: 20px;
+            padding: 0 15px;
+            .AddOns-leftSide { 
+                .AddOns-checkbox {
+                    width: 20px;
+                    height: 20px;
+                } 
+                .AddOns-checkboxChecked {
+                    width: 20px;
+                    height: 20px;
+                    img {
+                        position: absolute;
+                        top: 3px;
+                        left: 3px;
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+                .AddOns-text {
+                    margin-left: 15px;
+                    .AddOns-label {
+                        font-size: 15px;
+                    }
+                    .AddOns-description {
+                        margin-top: 4px;
+                        font-size: 12px;
+                    }
+                }
+            }
+            .AddOns-amount {
+                font-size: 16px;
+            }
         }
     }
 }

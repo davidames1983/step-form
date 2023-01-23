@@ -36,9 +36,7 @@ const StepForm = () => {
     }
 
     useEffect(() => {
-        // TODO uncomment
-        // const nextBtnState = getNextBtnDisabled();
-        const nextBtnState = false;
+        const nextBtnState = getNextBtnDisabled();
         setNextBtnDisabled(nextBtnState);
     },[stepsState])
 

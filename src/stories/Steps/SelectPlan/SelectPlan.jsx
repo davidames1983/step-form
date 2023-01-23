@@ -26,11 +26,13 @@ const SelectPlan = ({ handleStateChange, stepsState }) => {
                             <div className='SelectPlan-image'>
                                 <img src={plan.image} />
                             </div>
-                            <div className='SelectPlan-planName'>{capitalize(plan.name)}</div>
-                            <div className='SelectPlan-pricingWrapper'>
-                                <div className='SelectPlan-pricing'>${PRICING[plan.name][paySchedule]}/{scheduleAbbr}</div>
-                                {isYrly && <div className='SelectPlan-freeText'>2 months free</div>}             
-                            </div>  
+                           <div className='SelectPlan-planNameWrapper'>
+                                <div className='SelectPlan-planName'>{capitalize(plan.name)}</div>
+                                <div className='SelectPlan-pricingWrapper'>
+                                    <div className='SelectPlan-pricing'>${PRICING[plan.name][paySchedule]}/{scheduleAbbr}</div>
+                                    {isYrly && <div className='SelectPlan-freeText'>2 months free</div>}             
+                                </div>
+                            </div>
                         </div>
                     ))
                 }

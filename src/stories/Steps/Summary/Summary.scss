@@ -71,3 +71,53 @@
         }
     }
 }
+
+@media only screen and (max-width: 1050px) {
+    .Summary {
+        margin-top: 20px;
+        .Summary-details {
+            height: auto;
+            width: calc(100% - 30px);
+            padding: 15px;
+            .Summary-planTotal {
+                .Summary-selectedPlan {
+                    .Summary-selectedPlanText {
+                        font-size: 15px;
+                    }
+                    .Summary-selectedPlanChange {
+                        font-size: 15px;
+                    }
+                }
+                .Summary-planTotalAmount {
+                    font-size: 16px;
+                }
+            }
+            .Summary-addOns {
+                margin-top: 15px;
+                padding-top: 15px;
+                .Summary-addOn {
+                    &:not(:last-child) {
+                        margin-bottom: 15px;
+                    }
+                    .Summary-addOnLabel {
+                        font-size: 15px;
+                    }
+                    .Summary-addOnPrice {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .Summary-total {
+            margin-top: 10px;
+            width: calc(100% - 30px);
+            padding: 15px;
+            .Summary-totalLabel {
+                font-size: 16px;
+            }
+            .Summary-totalAmount {
+                font-size: 16px;
+            }
+        }
+    }
+}
