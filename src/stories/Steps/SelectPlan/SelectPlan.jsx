@@ -18,8 +18,9 @@ const SelectPlan = ({ handleStateChange, stepsState }) => {
         <div className='SelectPlan'>
             <div className='SelectPlan-options'>
                 { 
-                    PLANS.map(plan => (
+                    PLANS.map((plan,i) => (
                         <div 
+                            key={`plan-${i}`}
                             onClick={() => handleStateChange('selectedPlan',plan.name)}
                             className={`SelectPlan-option ${selectedPlan === plan.name ? 'selectedPlan' : null}`}
                         >

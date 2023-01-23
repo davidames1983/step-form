@@ -14,8 +14,9 @@ const AddOns = ({ handleStateChange, stepsState }) => {
     return (
         <div className='AddOns'>
             {
-                ADD_ONS.map((addOn) => (
+                ADD_ONS.map((addOn,i) => (
                     <div 
+                        key={`addOn-${i}`}
                         onClick={() => handleAddOnsClick(addOn.name)}
                         className={`AddOns-option ${stepsState[addOn.name] ? 'optionSelected' : ''}`}
                     >

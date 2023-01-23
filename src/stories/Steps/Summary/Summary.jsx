@@ -54,8 +54,11 @@ const Summary = ({ stepsState, setCurrentStep }) => {
                 {hasAddOns &&
                     <div className='Summary-addOns'>
                         {
-                            addOns.map(addOn => (
-                                <div className='Summary-addOn'>
+                            addOns.map((addOn,i) => (
+                                <div 
+                                    key={`summaryAddOn-${i}`}
+                                    className='Summary-addOn'
+                                >
                                     <div className='Summary-addOnLabel'>{PRICING[addOn]['label']}</div>
                                     <div className='Summary-addOnPrice'>+${PRICING[addOn][paySchedule]}/{scheduleAbbr}</div>
                                 </div>

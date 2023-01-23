@@ -32,8 +32,11 @@ const PersonalInfo = ({ handleStateChange, stepsState, stepsErrorState }) => {
     return (
         <div className='PersonalInfo'>
             {
-                PERSONAL_INFO.map(info => (
-                    <div className='PersonalInfo-name'>
+                PERSONAL_INFO.map((info,i) => (
+                    <div 
+                        key={`info-${i}`}
+                        className='PersonalInfo-name'
+                    >
                         <div className='PersonalInfo-labelErrorWrapper'>
                             <div className='PersonalInfo-label'>{info.label}</div>
                             <div className='PersonalInfo-error'>{activeElement === info.id ? null : stepsErrorState[info.id]}</div>
