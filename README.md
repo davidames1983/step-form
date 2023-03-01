@@ -1,3 +1,5 @@
+## Demo: https://main.drgb2cumzr7yt.amplifyapp.com/
+
 ## To Run
     npm start
 
@@ -5,7 +7,5 @@
     npm run storybook
 
 ![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
-
-## The challenge
 
 Design from frontendmentor.io
